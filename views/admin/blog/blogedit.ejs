@@ -1,0 +1,68 @@
+<%- include('../../header.ejs') %>
+
+  <section style="padding: 80px;height: 90vh;">
+    <div class="container">
+      <div class="body-content">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="dash-left">
+              <ul>
+                <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                <li><a href="/admin/blogdisplay" class="active">Blogs</a></li>
+                <li><a href="/admin/categorydisplay">Categories</a></li>
+                <li><a href="/admin/contactdisplay">Contact</a></li>
+                <li><a href="/admin/aboutdisplay">About</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="dash-right">
+              <div class="dash-header">
+                <div class="dash-title">
+                  <h1>Blog edit of this id:<%=b._id%>
+                  </h1>
+                </div>
+                <div class="dash-nav">
+                  <!-- Button trigger modal -->
+                </div>
+              </div>
+
+              <form method="post"  action="/blogupdate/<%=b.id%>" enctype="multipart/form-data">
+                <table>
+                  <tr>
+                    <th>#ID</th>
+                    <th>Title</th>
+                    <th>description</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                  </tr>
+                  <tr>
+                    <td>
+                     <input type="text" name="id" value="<%=b._id%>"> 
+                    </td>
+                    <td>
+                      <input width="5px" type="text" name="title" value="<%=b.title%>">
+                    </td>
+                    <td>
+                      <textarea name="description" id="description" cols="15" rows="4"><%=b.description%></textarea>
+                    </td>
+                    <td>
+                      <input type="file" name="image">
+                      <img src="<%=b.image.url%>" alt="img" width="250px" height="100px">
+                    </td>
+                    <td> 
+                      <input type="submit" value="Update" style="background-color:black; color: yellow;">
+                    </td>
+                  </tr>
+
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('../../footer.ejs') %>

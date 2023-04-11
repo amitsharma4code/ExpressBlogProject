@@ -1,0 +1,51 @@
+<%- include('../../header.ejs') %>
+
+    <section style="padding:90px;height: 92vh;">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dash-left">
+                            <ul>
+                                <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                                <li><a href="/admin/blogdisplay">Blogs</a></li>
+                                <li><a href="/admin/categorydisplay" class="active">Categories</a></li>
+                                <li><a href="/admin/contactdisplay">Contact</a></li>
+                                <li><a href="/admin/aboutdisplay">About</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Category</th>
+                                    <th>Posted On</th>
+
+                                    <%i=1%>
+                                        <% bc.forEach((items)=>{%>
+                                <tr>
+                                    <td>
+                                        <%=i++%>
+                                    </td>
+                                    <td>
+                                        <%=items.title%>
+                                    </td>
+                                    <td>
+                                        <%=items.createdAt.toLocaleDateString()%>
+                                    </td>
+
+                                </tr>
+                                <%})%>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../../footer.ejs') %>
