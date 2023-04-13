@@ -3,6 +3,7 @@ const AdminModel = require("../models/admin");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cloudinary=require('cloudinary')
+// const dotenv=require('dotenv')
 class FrontController {
   static home = async (req, res) => {
     // res.send("hello home");
@@ -91,7 +92,7 @@ class FrontController {
           // console.log(ismatched)
           if (ismatched) {
             //token generated
-            const token = jwt.sign({ id: admin._id }, "amitdigital");
+            const token = jwt.sign({ id: admin._id },process.env.JWT_SECRET_KEY,{expiresIn:'20m'});
             // console.log(token)
             res.cookie("token", token);
             res.redirect("/admin/dashboard");

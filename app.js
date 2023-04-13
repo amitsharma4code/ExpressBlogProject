@@ -6,8 +6,10 @@ var cloudinary = require('cloudinary');
 var session = require('express-session')
 var flash = require('connect-flash');
 const router=require('./routes/web')
+const dotenv=require('dotenv')
+dotenv.config({path:'.env'})
 const app=express()
-const port=3001;
+const port=process.env.PORT || 3001
 
 //get token
 const cookieParser = require('cookie-parser')

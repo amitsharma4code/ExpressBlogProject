@@ -6,7 +6,7 @@ const admin_auth = async (req, res, next) => {
     // console.log('hello admin')
     const { token } = req.cookies;
     // console.log(token)
-    const verify_token = jwt.verify(token, "amitdigital");
+    const verify_token = jwt.verify(token, process.env.JWT_SECRET_KEY);
     //  console.log(verify_token)
     const admin_data = await AdminModel.findOne({_id:verify_token.id});
     // console.log("admindata",admin_data);
