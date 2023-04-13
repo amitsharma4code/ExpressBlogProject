@@ -14,7 +14,7 @@ cloudinary.config({
 class BlogController {
   static blogdisplay = async (req, res) => {
     const data = await BlogModel.find()
-    console.log(data)
+    // console.log(data)
     res.render("./admin/blog/blogdisplay", { bd: data });
   };
 

@@ -6,12 +6,12 @@ const cloudinary=require('cloudinary')
 class FrontController {
   static home = async (req, res) => {
     // res.send("hello home");
-    const image=req.files;
-    const uploadimg= await cloudinary.uploader.upload(req.tempFilePath,{
-      floder:"api image ",
-      width:150,
+    // const image=req.files;
+    // const uploadimg= await cloudinary.uploader.upload(req.tempFilePath,{
+    //   floder:"api image ",
+    //   width:150,
     
-    })
+    // })
     const data = await BlogModel.find().limit(6).sort({ _id: -1 });
     // console.log(data);
     res.render("home", { d: data });
