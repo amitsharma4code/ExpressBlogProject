@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 const connectDB=()=>{
-    return mongoose.connect('mongodb://0.0.0.0:27017/BlogWebsite')
+    return mongoose.connect('mongodb+srv://radhakirshan:ramram@liveprojects.yzrt8sy.mongodb.net/Blog')
 
     .then(()=>{
         console.log('Connection succesfull')
