@@ -29,7 +29,7 @@ class BlogController {
         folder: "blog_Image",
       }
     );
-    console.log(uploadimg);
+    // console.log(uploadimg);
     try {
       const result = new BlogModel({
         title: req.body.title,
