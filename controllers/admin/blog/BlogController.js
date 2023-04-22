@@ -134,7 +134,7 @@ class BlogController {
       message:req.body.message
     })
     await result.save()
-    req.flash('success',"Message Send Successfully,You canact as soon as possible")
+    req.flash('success',"Message Send Successfully,We will contact you as soon as possible.")
     res.redirect('/contact')
   }
 }

@@ -1,3 +1,5 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
 h1 {
 	font-size: 2.4rem;
 	margin-bottom: 30px;
@@ -6,7 +8,11 @@ h1 {
 .bg-blue {
 	background-color: black;
 }
-
+.navbar{
+	position: sticky;
+	top: 0.1px;
+	z-index: 1;
+}
 .navbar-brand img {
 	height: 40px;
 	width: 40px;
@@ -172,6 +178,21 @@ h1 {
 	text-transform: uppercase;
 	color: #007EDA;
 }
+/* footer design */
+.footer{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: #ffc107!important;
+
+}
+.social-icon a:first-child{
+	margin-right: 10px;
+}
+.social-icon a i{
+	color: #ffc107!important;
+	font-size: 30px;
+}
 
 /*Admin*/
 .login-box {
@@ -249,11 +270,37 @@ footer {
 .contact-message {
 	text-align: center;
 }
-
+/* about page */
+.about{
+  background-color: rgb(250, 249, 249);
+  padding-block: 80px;
+}
+.about .container h1::first-letter{
+	font-size: 80px;
+}
+.about p{
+	text-align: justify;
+	font-size: 1rem;
+	line-height: 1.75;
+	color:darkgoldenrod;
+}
 @media (max-width: 767px) {
 	.intro-text {
 		display: none;
 	}
+	.footer{
+		flex-direction: column;
+		gap: 20px;
+	}
+	.contact-bcimg{
+		    padding: 122px 20px !important;
+	}
+	.navbar-toggler {
+		padding: -0.75rem .75rem;
+		background-color: white;
+		
+	}
+	
 }
 
 /*self style*/
@@ -279,7 +326,8 @@ footer {
 .contact-bcimg{
 	padding: 150px;
 	background-image:url('../image/background.jpg');
-	height: 100vh;
+	background-size: cover;
+	background-position: center;
 	
 }
 .form_design{
