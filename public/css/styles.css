@@ -284,6 +284,10 @@ footer {
 	line-height: 1.75;
 	color:darkgoldenrod;
 }
+.action-btn{
+	width: 250px;
+	text-align: center;
+}
 @media (max-width: 767px) {
 	.intro-text {
 		display: none;
@@ -300,6 +304,38 @@ footer {
 		background-color: white;
 		
 	}
+	.table thead{
+		display: none;
+	}
+	.table, .table tbody, .table tr, .table td{
+          display: block;
+          width: 100%;
+    }
+	
+	.table tbody tr td{
+          text-align: center;
+          padding-left: 32%;
+          position: relative;
+    }
+	.table tbody tr{
+		margin-bottom: 10px;
+	}
+	.table td:before{
+		content: attr(data-label);
+		position: absolute;
+		left: 0%;
+		width: 50%;
+		text-align: left;
+		padding-left: 15px;
+		font-weight: 600;
+		font-size: 14px;
+	  }
+	  .action-btn{
+		width: 100%;
+	   }
+	   .action-btn a{
+		margin: 5px;
+	   }
 	
 }
 

@@ -1,6 +1,6 @@
 <%- include('../../header.ejs') %>
 
-    <section style="padding:90px;height: 92vh;">
+    <section class="mtb-40">
         <div class="container">
             <div class="body-content">
                 <div class="row">
@@ -18,27 +18,36 @@
                     </div>
                     <div class="col-md-9">
                         <div class="dash-right">
-                            
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1 style="text-align: center;">Categories  Display</h1>
+                                </div>
+                            </div>
                             <table class="table table-bordered table-striped">
+                               <thead>
                                 <tr>
                                     <th>#ID</th>
                                     <th>Category</th>
                                     <th>Posted On</th>
+                                </tr>
+                                </thead>
 
                                     <%i=1%>
                                         <% bc.forEach((items)=>{%>
-                                <tr>
-                                    <td>
+                                <tbody>
+                                 <tr>
+                                    <td data-label="id">
                                         <%=i++%>
                                     </td>
-                                    <td>
+                                    <td data-label="tittle">
                                         <%=items.title%>
                                     </td>
-                                    <td>
+                                    <td data-label="createdAt">
                                         <%=items.createdAt.toLocaleDateString()%>
                                     </td>
+                                   </tr>
+                                </tbody>
 
-                                </tr>
                                 <%})%>
 
                             </table>

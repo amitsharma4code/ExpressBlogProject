@@ -1,6 +1,6 @@
 <%- include('../../header.ejs') %>
 
-  <section style="padding: 80px;height: 90vh;">
+  <section>
     <div class="container">
       <div class="body-content">
         <div class="row">
@@ -20,8 +20,7 @@
             <div class="dash-right">
               <div class="dash-header">
                 <div class="dash-title">
-                  <h1>Blog edit of this id:<%=b._id%>
-                  </h1>
+                  <h1>Edit Your Blog</h1>
                 </div>
                 <div class="dash-nav">
                   <!-- Button trigger modal -->
@@ -29,7 +28,8 @@
               </div>
 
               <form method="post"  action="/blogupdate/<%=b.id%>" enctype="multipart/form-data">
-                <table>
+                <table class="table">
+                  <thead>
                   <tr>
                     <th>#ID</th>
                     <th>Title</th>
@@ -37,25 +37,27 @@
                     <th>Image</th>
                     <th>Action</th>
                   </tr>
+                  </thead>
+                 <tbody>
                   <tr>
-                    <td>
+                    <td data-label="id">
                      <input type="text" name="id" value="<%=b._id%>"> 
                     </td>
                     <td>
                       <input width="5px" type="text" name="title" value="<%=b.title%>">
                     </td>
-                    <td>
+                    <td data-label="name">
                       <textarea name="description" id="description" cols="15" rows="4"><%=b.description%></textarea>
                     </td>
-                    <td>
+                    <td data-label="image">
                       <input type="file" name="image">
                       <img src="<%=b.image.url%>" alt="img" width="250px" height="100px">
                     </td>
-                    <td> 
+                    <td data-label="submit"> 
                       <input type="submit" value="Update" style="background-color:black; color: yellow;">
                     </td>
                   </tr>
-
+                </tbody>
                 </table>
               </form>
             </div>
